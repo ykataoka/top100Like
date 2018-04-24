@@ -1,4 +1,6 @@
 class Solution(object):
+
+    # Solution 1: DP
 #    def permute(self, nums):
 #        """
 #        :type nums: List[int]
@@ -28,8 +30,10 @@ class Solution(object):
         return res
 
     def dfs(self, nums, path, res):
+        # base case: end condition
         if nums == []:
-            return path
+            res.append(path)
+            return
 
-        for i in range(len(nums)):
-            self.dfs(nums[:i]+nums[i+1:], path+nums[i], res)
+        for i in xrange(len(nums)):
+            self.dfs(nums[:i]+nums[i+1:], path+[nums[i]], res)
