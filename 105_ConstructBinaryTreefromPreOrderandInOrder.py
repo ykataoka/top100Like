@@ -27,4 +27,4 @@ class Solution(object):
         root = TreeNode(root_val)
         root.left = self.buildTree(preorder[:idx], inorder[:idx])
         root.right = self.buildTree(preorder[idx:], inorder[idx+1:])
-        return root   
+        return root
